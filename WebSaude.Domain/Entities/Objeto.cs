@@ -10,5 +10,7 @@ namespace WebSaude.Domain.Entities
         public string Icone { get; set; }
 
         public List<ObjetoFilho> Itens { get; set; }
+
+        public List<ObjetoFilho> ObjetosFilhos { get; set; }
     }
 }

@@ -16,7 +16,8 @@ namespace WebSaude.Data.Map
             builder.Property(p => p.Icone).HasColumnName("icone");
 
             builder.HasKey(p => p.Id);
-            builder.HasMany(p => p.Itens).WithOne(o => o.Objeto).HasForeignKey(fk => fk.IdObjetoFilho);
+            builder.HasMany(p => p.Itens).WithOne().HasForeignKey(fk => fk.IdObjetoPai);
+            builder.HasMany(p => p.ObjetosFilhos).WithOne(f => f.Objeto).HasForeignKey(fk => fk.IdObjetoFilho);
         }
     }
 }
